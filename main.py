@@ -12,13 +12,10 @@ global b
 print("Choisissez 2 nombres et je choisirai un nombre au hasard entre les deux."
     " À vous de le deviner...")
 
-
 def choisir_bornes():
    a = int(input("Choisissez la limite inférieur"))
    b = int(input("Choisissez la limite supérieur"))
    return a, b
-
-
 
 def quit_ou_non():
   global nombre_essai
@@ -38,10 +35,8 @@ def quit_ou_non():
   else:
       print("Veuillez répondre avec oui ou non")
 
-
 borne_inf, borne_sup = choisir_bornes()
 nombre_aleatoire = random.randint(borne_inf, borne_sup)
-
 
 while quit == False:
  essai = int(input("Merci. Entrez votre tentative:"))
