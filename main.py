@@ -1,5 +1,5 @@
 """
-Code de devinette d'un nombre
+Code de devinette d'un nombre aléatoire.
 Nom: Liam Deehy-Rivest
 Groupe: 123
 """
