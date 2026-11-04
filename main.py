@@ -5,9 +5,8 @@ Groupe: 123
 """
 import random
 nombre_essai = 0
-quit = False
-global a
-global b
+
+
 
 print("Choisissez 2 nombres et je choisirai un nombre au hasard entre les deux."
     " À vous de le deviner...")
@@ -15,30 +14,27 @@ print("Choisissez 2 nombres et je choisirai un nombre au hasard entre les deux."
 def choisir_bornes():
    a = int(input("Choisissez la limite inférieur"))
    b = int(input("Choisissez la limite supérieur"))
+   print(f"La limite inférieure est {a} et la limite supérieure est {b}")
    return a, b
 
 def quit_ou_non():
-  global nombre_essai
-  global quit
-  global nombre_aleatoire
   continuer = input("Voulez-vous faire une autre partie (oui/non?)")
-  if continuer == ("non"):
+  if continuer == "non":
       print("Merci et au revoir")
-      quit = True
-  elif continuer == ("oui"):
-      quit = False
-      print("Choisissez 2 nombres et je choisirai un nombre au hasard entre les deux."
-            " À vous de le deviner...")
-      borne_inf, borne_sup = choisir_bornes()
-      nombre_aleatoire = random.randint(borne_inf, borne_sup)
-      nombre_essai = 0
+      return False
+
+
+  elif continuer == "oui":
+      return True
   else:
       print("Veuillez répondre avec oui ou non")
+      return quit_ou_non()
 
 borne_inf, borne_sup = choisir_bornes()
 nombre_aleatoire = random.randint(borne_inf, borne_sup)
 
-while quit == False:
+while True:
+
  essai = int(input("Merci. Entrez votre tentative:"))
  if essai > nombre_aleatoire:
      print(f"Mauvais choix, le nombre est plus petit que {essai} "
@@ -52,4 +48,12 @@ while quit == False:
      (print("Bravo! Bonne réponse"))
      nombre_essai += 1
      print(f"Vous avez réussi en {nombre_essai} essai(s)")
-     quit_ou_non()
+     reponse = quit_ou_non()
+     if not reponse:
+         break
+     else:
+         borne_inf, borne_sup = choisir_bornes()
+         nombre_aleatoire = random.randint(borne_inf, borne_sup)
+         nombre_essai = 0
+
+
