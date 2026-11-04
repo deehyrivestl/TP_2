@@ -16,6 +16,7 @@ def choisir_bornes():
    b = int(input("Choisissez la limite supérieur"))
    print(f"La limite inférieure est {a} et la limite supérieure est {b}")
    return a, b
+#le a c'est la limite supérieure et le b c'est la limite inférieure
 
 def quit_ou_non():
   continuer = input("Voulez-vous faire une autre partie (oui/non?)")
