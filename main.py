@@ -16,10 +16,10 @@ def choisir_bornes():
    b = int(input("Choisissez la limite supérieur"))
    print(f"La limite inférieure est {a} et la limite supérieure est {b}")
    return a, b
-#le a c'est la limite supérieure et le b c'est la limite inférieure
+#le a c'est la limite inférieure et le b c'est la limite supérieure
 
 def quit_ou_non():
-  continuer = input("Voulez-vous faire une autre partie (oui/non?)")
+  continuer = input("Voulez-vous faire une autre partie (oui/non?)").lower()
   if continuer == "non":
       print("Merci et au revoir")
       return False
@@ -46,7 +46,7 @@ while True:
            "Entrez votre essai :_")
      nombre_essai += 1
  elif essai == nombre_aleatoire:
-     (print("Bravo! Bonne réponse"))
+     print("Bravo! Bonne réponse")
      nombre_essai += 1
      print(f"Vous avez réussi en {nombre_essai} essai(s)")
      reponse = quit_ou_non()
